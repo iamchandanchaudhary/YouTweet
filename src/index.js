@@ -1,13 +1,20 @@
-const mongoose = require("mongoose");
+// require('dotenv').config({path: "./env"})
+
 // import mongoose from "mongoose";
-import { DB_NAME } from "./constants";
+// import express from "express";
+// import { DB_NAME } from "./constants";
 
-const express = require("express");
+import dotenv from "dotenv";
+import ConnectDB from "./db/database.js";
 
-async function main() {
-    await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`);
-}
+dotenv.config({path: "./env"})
 
-main()
-    .then(() => console.log("Connection Done."))
-    .catch((err) => console.log(err));
+ConnectDB();
+
+// async function main() {
+//     await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`);
+// }
+
+// main()
+//     .then(() => console.log("Connection Done."))
+//     .catch((err) => console.log(err));
