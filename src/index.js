@@ -21,7 +21,7 @@ ConnectDB()
 
 
 
-
+// ==> Full process in index file
 // async function main() {
 //     await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`);
 // }
